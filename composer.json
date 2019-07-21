@@ -1,0 +1,40 @@
+{
+    "name": "lewisjenkins/craft-color-picker",
+    "description": "...",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "craft color picker"
+    ],
+    "support": {
+        "docs": "https://github.com/lewisjenkins/craft-color-picker/blob/master/README.md",
+        "issues": "https://github.com/lewisjenkins/craft-color-picker/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lewis Jenkins",
+            "homepage": "https://lj.io"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "lewisjenkins\\craftcolorpicker\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Craft Color Picker",
+        "handle": "craft-color-picker",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/lewisjenkins/craft-color-picker/master/CHANGELOG.md",
+        "class": "lewisjenkins\\craftcolorpicker\\CraftColorPicker"
+    }
+}

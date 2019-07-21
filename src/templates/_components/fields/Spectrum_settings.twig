@@ -1,0 +1,26 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Craft Color Picker plugin for Craft CMS
+ *
+ * Spectrum Field Settings
+ *
+ * @author    Lewis Jenkins
+ * @copyright Copyright (c) 2019 Lewis Jenkins
+ * @link      https://lj.io
+ * @package   CraftColorPicker
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+{#
+{% do view.registerAssetBundle("lewisjenkins\\craftcolorpicker\\assetbundles\\craftcolorpicker\\CraftColorPickerAsset") %}
+#}
+{{ forms.textField({
+    label: 'Some Attribute',
+    instructions: 'Enter some attribute here.',
+    id: 'someAttribute',
+    name: 'someAttribute',
+    value: field['someAttribute']})
+}}
