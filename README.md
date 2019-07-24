@@ -1,43 +1,136 @@
-# Craft Color Picker plugin for Craft CMS 3.x
+# LJ Color Picker plugin for Craft CMS 3.x
 
-...
-
-![Screenshot](resources/img/plugin-logo.png)
+A simple color picker for Craft CMS based on the [jQuery Spectrum plugin](https://github.com/bgrins/spectrum).
 
 ## Requirements
 
-This plugin requires Craft CMS 3.0.0-beta.23 or later.
+This plugin requires Craft CMS 3.0.0 or later.
 
 ## Installation
 
-To install the plugin, follow these instructions.
+You can install the plugin via the Craft Plugin Store.
 
-1. Open your terminal and go to your Craft project:
+## Overview
 
-        cd /path/to/project
+This plugin adds the following fieldtype:
 
-2. Then tell Composer to load the plugin:
+- LJ Color Picker
 
-        composer require lewisjenkins/craft-color-picker
+## Screenshot
 
-3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Craft Color Picker.
+![Screenshot](resources/img/1.png)
 
-## Craft Color Picker Overview
+## Quick start
 
--Insert text here-
+The default behaviour is to display a mini-picker that shows the currently selected color. For example:
 
-## Configuring Craft Color Picker
+![Screenshot](resources/img/7.png)
 
--Insert text here-
+Clicking on the mini-picker shows the full interface. It's also possible to embed the full interface directly into the page with `flat: true`.
 
-## Using Craft Color Picker
+## Examples
 
--Insert text here-
+Copy one of the following examples into the Parameters field above.
 
-## Craft Color Picker Roadmap
+### Simple example
 
-Some things to do, and ideas for potential features:
+![Screenshot](resources/img/1.png)
 
-* Release it
+```
+allowEmpty: true,
+preferredFormat: "hex",
+showButtons: false
+```
+
+### Show input
+
+![Screenshot](resources/img/2.png)
+
+```
+allowEmpty: true,
+preferredFormat: "hex",
+showButtons: false,
+showInput: true
+```
+
+### Show alpha
+
+![Screenshot](resources/img/3.png)
+
+```
+allowEmpty: true,
+preferredFormat: "rgb",
+showButtons: false,
+showInput: true,
+showAlpha: true
+```
+
+### Show palette
+
+![Screenshot](resources/img/4.png)
+
+```
+allowEmpty: true,
+showButtons: false,
+showPalette: true,
+palette: [
+    ['black', 'white', 'blanchedalmond'],
+    ['rgb(255, 128, 0);', 'hsv 100 70 50', 'lightyellow']
+]
+```
+
+### Show palette only
+
+![Screenshot](resources/img/5.png)
+
+```
+showPaletteOnly: true,
+showPalette:true,
+palette: [
+    ['black', 'white', 'blanchedalmond',
+    'rgb(255, 128, 0);', 'hsv 100 70 50'],
+    ['red', 'yellow', 'green', 'blue', 'violet']
+]
+```
+
+### Twig logic
+
+![Screenshot](resources/img/8.png)
+
+```
+{% set colors = ['black', 'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'] %}
+{% set palette %}
+	[
+	{% for row in colors|batch(2) %}
+		{{ loop.index > 1 ? ',' }}
+	    [
+        {% for color in row %}
+        	{{ loop.index > 1 ? ',' }}
+            '{{ color }}'
+        {% endfor %}
+	    ]
+	{% endfor %}
+	]
+{% endset %}
+
+showPaletteOnly: true,
+showPalette:true,
+palette: {{ palette }}
+```
+
+### Params in an external file
+
+(relative to /templates folder)
+
+
+```
+{% include '_colorPickerParams.json' ignore missing %}
+```
+
+### More examples
+
+See the [documentation](https://github.com/lewisjenkins/craft-color-picker) for more examples.
+
+---
 
 Brought to you by [Lewis Jenkins](https://lj.io)
