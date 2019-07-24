@@ -26,7 +26,7 @@ The default behaviour is to display a mini-picker that shows the currently selec
 
 ![Screenshot](resources/img/7.png)
 
-Clicking on the mini-picker shows the full interface. It's also possible to embed the full interface directly into the page with `flat: true`.
+Clicking on the mini-picker shows the full interface. You can embed the full interface directly into the page with `flat: true`.
 
 ## Examples
 
@@ -128,7 +128,7 @@ palette: {{ palette }}
 
 ### More examples
 
-See the [documentation](https://github.com/lewisjenkins/craft-color-picker) for more examples.
+See the original [jQuery Spectrum plugin](https://github.com/bgrins/spectrum) for more examples.
 
 ---
 
