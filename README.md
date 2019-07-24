@@ -18,7 +18,7 @@ This plugin adds the following fieldtype:
 
 ## Screenshot
 
-![Screenshot](resources/img/1.png)
+![Screenshot](resources/img/9.png)
 
 ## Quick start
 
