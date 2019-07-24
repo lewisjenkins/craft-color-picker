@@ -1,6 +1,6 @@
 {
     "name": "lewisjenkins/craft-color-picker",
-    "description": "...",
+    "description": "A simple color picker for Craft CMS.",
     "type": "craft-plugin",
     "version": "1.0.0",
     "keywords": [
