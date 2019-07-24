@@ -122,7 +122,6 @@ palette: {{ palette }}
 
 (relative to /templates folder)
 
-
 ```
 {% include '_colorPickerParams.json' ignore missing %}
 ```
@@ -133,4 +132,6 @@ See the [documentation](https://github.com/lewisjenkins/craft-color-picker) for 
 
 ---
 
-Brought to you by [Lewis Jenkins](https://lj.io)
+This plugin is based on the [jQuery Spectrum plugin](https://github.com/bgrins/spectrum) plugin [[MIT licence](https://github.com/bgrins/spectrum/blob/master/LICENSE)], with thanks to the original developer.
+
+Brought to you by [Lewis Jenkins](https://lj.io).
