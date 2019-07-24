@@ -1,0 +1,4 @@
+/* Prevent picker showing above live preview when using flat:true */
+#main-content .sp-container {
+	z-index: 99;
+}

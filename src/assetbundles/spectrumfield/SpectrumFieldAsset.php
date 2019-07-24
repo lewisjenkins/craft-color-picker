@@ -1,12 +1,4 @@
 <?php
-/**
- * Craft Color Picker plugin for Craft CMS 3.x
- *
- * ...
- *
- * @link      https://lj.io
- * @copyright Copyright (c) 2019 Lewis Jenkins
- */
 
 namespace lewisjenkins\craftcolorpicker\assetbundles\spectrumfield;
 
@@ -14,19 +6,8 @@ use Craft;
 use craft\web\AssetBundle;
 use craft\web\assets\cp\CpAsset;
 
-/**
- * @author    Lewis Jenkins
- * @package   CraftColorPicker
- * @since     1.0.0
- */
 class SpectrumFieldAsset extends AssetBundle
 {
-    // Public Methods
-    // =========================================================================
-
-    /**
-     * @inheritdoc
-     */
     public function init()
     {
         $this->sourcePath = "@lewisjenkins/craftcolorpicker/assetbundles/spectrumfield/dist";
@@ -36,11 +17,12 @@ class SpectrumFieldAsset extends AssetBundle
         ];
 
         $this->js = [
-            'js/Spectrum.js',
+            'js/spectrum.js',
         ];
 
         $this->css = [
-            'css/Spectrum.css',
+            'css/spectrum.css',
+            'css/custom.css',
         ];
 
         parent::init();

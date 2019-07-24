@@ -1,26 +1,142 @@
-{# @var craft \craft\web\twig\variables\CraftVariable #}
-{#
-/**
- * Craft Color Picker plugin for Craft CMS
- *
- * Spectrum Field Settings
- *
- * @author    Lewis Jenkins
- * @copyright Copyright (c) 2019 Lewis Jenkins
- * @link      https://lj.io
- * @package   CraftColorPicker
- * @since     1.0.0
- */
-#}
-
 {% import "_includes/forms" as forms %}
-{#
-{% do view.registerAssetBundle("lewisjenkins\\craftcolorpicker\\assetbundles\\craftcolorpicker\\CraftColorPickerAsset") %}
-#}
+
 {{ forms.textField({
-    label: 'Some Attribute',
-    instructions: 'Enter some attribute here.',
-    id: 'someAttribute',
-    name: 'someAttribute',
-    value: field['someAttribute']})
-}}
+    label: "Default Color"|t('app'),
+    instructions: "Optional. Specify a default color for the field."|t('app'),
+    placeholder: "eg. #000 or rgba(0,0,0) or black"|t('app'),
+    id: 'defaultColor',
+    name: 'defaultColor',
+    value: field.defaultColor
+}) }}
+
+{{ forms.textareaField({
+	label: "Parameters"|t('app'),
+	instructions: "See the [documentation](https://github.com/lewisjenkins/craft-color-picker) for examples."|t('app'),
+    id: 'params',
+    name: 'params',
+    value: field.params,
+    class: 'nicetext code',
+    rows: field.initialRows
+}) }}
+
+<hr>
+
+{% set text %}
+
+## Quick start
+
+The default behaviour is to display a mini-picker that shows the currently selected color. For example:
+
+![Screenshot]({{ img }}/7.png)
+
+Clicking on the mini-picker shows the full interface. It's also possible to embed the full interface directly into the page with `flat: true`.
+
+## Examples
+
+Copy one of the following examples into the Parameters field above.
+
+### Simple example
+
+![Screenshot]({{ img }}/1.png)
+
+```
+allowEmpty: true,
+preferredFormat: "hex",
+showButtons: false
+```
+
+### Show input
+
+![Screenshot]({{ img }}/2.png)
+
+```
+allowEmpty: true,
+preferredFormat: "hex",
+showButtons: false,
+showInput: true
+```
+
+### Show alpha
+
+![Screenshot]({{ img }}/3.png)
+
+```
+allowEmpty: true,
+preferredFormat: "rgb",
+showButtons: false,
+showInput: true,
+showAlpha: true
+```
+
+### Show palette
+
+![Screenshot]({{ img }}/4.png)
+
+```
+allowEmpty: true,
+showButtons: false,
+showPalette: true,
+palette: [
+    ['black', 'white', 'blanchedalmond'],
+    ['rgb(255, 128, 0);', 'hsv 100 70 50', 'lightyellow']
+]
+```
+
+### Show palette only
+
+![Screenshot]({{ img }}/5.png)
+
+```
+showPaletteOnly: true,
+showPalette:true,
+palette: [
+    ['black', 'white', 'blanchedalmond',
+    'rgb(255, 128, 0);', 'hsv 100 70 50'],
+    ['red', 'yellow', 'green', 'blue', 'violet']
+]
+```
+
+### Twig logic
+
+![Screenshot]({{ img }}/8.png)
+{% verbatim %}
+
+```
+{% set colors = ['black', 'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'] %}
+{% set palette %}
+	[
+	{% for row in colors|batch(2) %}
+		{{ loop.index > 1 ? ',' }}
+	    [
+        {% for color in row %}
+        	{{ loop.index > 1 ? ',' }}
+            '{{ color }}'
+        {% endfor %}
+	    ]
+	{% endfor %}
+	]
+{% endset %}
+
+showPaletteOnly: true,
+showPalette:true,
+palette: {{ palette }}
+```
+{% endverbatim %}
+
+### Params in an external file
+
+(relative to /templates folder)
+
+{% verbatim %}
+
+```
+{% include '_colorPickerParams.json' ignore missing %}
+```
+{% endverbatim %}
+
+### More examples
+
+See the [documentation](https://github.com/lewisjenkins/craft-color-picker) for more examples.
+
+{% endset %}
+{{ text|md('gfm') }}

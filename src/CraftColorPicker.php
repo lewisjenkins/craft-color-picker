@@ -1,12 +1,4 @@
 <?php
-/**
- * Craft Color Picker plugin for Craft CMS 3.x
- *
- * ...
- *
- * @link      https://lj.io
- * @copyright Copyright (c) 2019 Lewis Jenkins
- */
 
 namespace lewisjenkins\craftcolorpicker;
 
@@ -21,38 +13,12 @@ use craft\events\RegisterComponentTypesEvent;
 
 use yii\base\Event;
 
-/**
- * Class CraftColorPicker
- *
- * @author    Lewis Jenkins
- * @package   CraftColorPicker
- * @since     1.0.0
- *
- */
 class CraftColorPicker extends Plugin
 {
-    // Static Properties
-    // =========================================================================
-
-    /**
-     * @var CraftColorPicker
-     */
     public static $plugin;
 
-    // Public Properties
-    // =========================================================================
-
-    /**
-     * @var string
-     */
     public $schemaVersion = '1.0.0';
 
-    // Public Methods
-    // =========================================================================
-
-    /**
-     * @inheritdoc
-     */
     public function init()
     {
         parent::init();
@@ -84,8 +50,5 @@ class CraftColorPicker extends Plugin
             __METHOD__
         );
     }
-
-    // Protected Methods
-    // =========================================================================
 
 }

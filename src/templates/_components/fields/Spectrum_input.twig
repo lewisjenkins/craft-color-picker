@@ -1,24 +1,9 @@
-{# @var craft \craft\web\twig\variables\CraftVariable #}
-{#
-/**
- * Craft Color Picker plugin for Craft CMS 3.x
- *
- * Spectrum Field Input
- *
- * @author    Lewis Jenkins
- * @copyright Copyright (c) 2019 Lewis Jenkins
- * @link      https://lj.io
- * @package   CraftColorPicker
- * @since     1.0.0
- */
-#}
-
 {% import "_includes/forms" as forms %}
 
 {{ forms.textField({
-        label: 'Some Field',
-        instructions: 'Enter some text here.',
-        id: name,
+        id: id,
         name: name,
-        value: value})
+        value: value
+        })
 }}
+{{ value }}
