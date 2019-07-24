@@ -26,7 +26,9 @@ The default behaviour is to display a mini-picker that shows the currently selec
 
 ![Screenshot](resources/img/7.png)
 
-Clicking on the mini-picker shows the full interface. You can embed the full interface directly into the page with `flat: true`.
+Clicking on the mini-picker shows the full interface.
+
+Alternatively, you can embed the full interface directly into the page with `flat: true`.
 
 ## Examples
 
