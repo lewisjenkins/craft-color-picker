@@ -40,17 +40,6 @@ showButtons: false';
             ]
         );
     }
-    
-    public function normalizeValue($value, ElementInterface $element = null)
-    {
-		
-        if ($this->isFresh($element)) {
-            $value = $this->defaultColor;
-        };
-        
-        return $value;
-		
-    }
 
     public function getInputHtml($value, ElementInterface $element = null): string
     {
@@ -70,9 +59,13 @@ showButtons: false';
 		
 		$view->setTemplateMode($templateMode);
 		
-		$js = "$('#" . $namespacedId . "').spectrum({" . $params . "}).spectrum('set', '" . $value . "');";
+		$js = "$('#" . $namespacedId . "').spectrum({" . $params . "});";
 		
 		$view->registerJs($js);
+		
+        if ($this->isFresh($element)) {
+            $value = $this->defaultColor;
+        };
 
         return Craft::$app->getView()->renderTemplate(
             'craft-color-picker/_components/fields/Spectrum_input',
