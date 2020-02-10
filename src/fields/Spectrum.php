@@ -14,8 +14,10 @@ class Spectrum extends Field
 {
 
     public $params = 'allowEmpty: true,
-preferredFormat: "hex",
-showButtons: false';
+preferredFormat: "rgb",
+showButtons: false,
+showInput: true,
+showAlpha: true';
     public $defaultColor = '';
     public $initialRows = 8;
     
