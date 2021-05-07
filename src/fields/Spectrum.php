@@ -65,7 +65,7 @@ showAlpha: true';
 		
 		$view->registerJs($js);
 		
-        if ($this->isFresh($element)) {
+        if ($this->isFresh($element) && $value === null) {
             $value = $this->defaultColor;
         };
 
