@@ -24,7 +24,8 @@
         }
     ],
     "require": {
-        "craftcms/cms": "^3.0.0"
+        "craftcms/cms": "^4.0.0",
+        "php": "^8.0.2"
     },
     "autoload": {
         "psr-4": {
@@ -41,5 +42,16 @@
         "changelogUrl": "https://raw.githubusercontent.com/lewisjenkins/craft-color-picker/master/CHANGELOG.md",
         "documentationUrl": "https://github.com/lewisjenkins/craft-color-picker/blob/master/README.md",
         "class": "lewisjenkins\\craftcolorpicker\\CraftColorPicker"
+    },
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true,
+            "craftcms/plugin-installer": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "craftcms/rector": "dev-main"
     }
 }

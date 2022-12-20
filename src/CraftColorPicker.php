@@ -15,11 +15,11 @@ use yii\base\Event;
 
 class CraftColorPicker extends Plugin
 {
-    public static $plugin;
+    public static ?CraftColorPicker $plugin;
 
-    public $schemaVersion = '1.0.0';
+    public string $schemaVersion = '1.0.0';
 
-    public function init()
+    public function init(): void
     {
         parent::init();
         self::$plugin = $this;

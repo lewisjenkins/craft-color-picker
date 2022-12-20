@@ -13,13 +13,13 @@ use yii\db\Schema;
 class Spectrum extends Field
 {
 
-    public $params = 'allowEmpty: true,
+    public string $params = 'allowEmpty: true,
 preferredFormat: "rgb",
 showButtons: false,
 showInput: true,
 showAlpha: true';
-    public $defaultColor = '';
-    public $initialRows = 8;
+    public string $defaultColor = '';
+    public int $initialRows = 8;
     
     public static function displayName(): string
     {
@@ -31,7 +31,7 @@ showAlpha: true';
         return Schema::TYPE_TEXT;
     }
 
-    public function getSettingsHtml()
+    public function getSettingsHtml(): ?string
     {
 	            //Craft::$app->getView()->registerAssetBundle(SpectrumFieldAsset::class);
         return Craft::$app->getView()->renderTemplate(
@@ -43,7 +43,7 @@ showAlpha: true';
         );
     }
 
-    public function getInputHtml($value, ElementInterface $element = null): string
+    protected function inputHtml(mixed $value, ?ElementInterface $element = null): string
     {
         $view = Craft::$app->getView();
         $view->registerAssetBundle(SpectrumFieldAsset::class);
@@ -65,7 +65,7 @@ showAlpha: true';
 		
 		$view->registerJs($js);
 		
-        if ($this->isFresh($element)) {
+        if ($this->isFresh($element) && $value === null) {
             $value = $this->defaultColor;
         };
 
