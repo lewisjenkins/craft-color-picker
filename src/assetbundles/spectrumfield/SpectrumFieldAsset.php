@@ -8,7 +8,7 @@ use craft\web\assets\cp\CpAsset;
 
 class SpectrumFieldAsset extends AssetBundle
 {
-    public function init()
+    public function init(): void
     {
         $this->sourcePath = "@lewisjenkins/craftcolorpicker/assetbundles/spectrumfield/dist";
 

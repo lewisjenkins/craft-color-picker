@@ -13,13 +13,13 @@ use yii\db\Schema;
 class Spectrum extends Field
 {
 
-    public $params = 'allowEmpty: true,
+    public string $params = 'allowEmpty: true,
 preferredFormat: "rgb",
 showButtons: false,
 showInput: true,
 showAlpha: true';
-    public $defaultColor = '';
-    public $initialRows = 8;
+    public string $defaultColor = '';
+    public int $initialRows = 8;
     
     public static function displayName(): string
     {
