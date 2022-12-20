@@ -43,7 +43,7 @@ showAlpha: true';
         );
     }
 
-    public function getInputHtml(mixed $value, ?ElementInterface $element = null): string
+    protected function inputHtml(mixed $value, ?ElementInterface $element = null): string
     {
         $view = Craft::$app->getView();
         $view->registerAssetBundle(SpectrumFieldAsset::class);
