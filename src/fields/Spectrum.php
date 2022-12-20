@@ -31,7 +31,7 @@ showAlpha: true';
         return Schema::TYPE_TEXT;
     }
 
-    public function getSettingsHtml()
+    public function getSettingsHtml(): ?string
     {
 	            //Craft::$app->getView()->registerAssetBundle(SpectrumFieldAsset::class);
         return Craft::$app->getView()->renderTemplate(
@@ -43,7 +43,7 @@ showAlpha: true';
         );
     }
 
-    public function getInputHtml($value, ElementInterface $element = null): string
+    public function getInputHtml(mixed $value, ?ElementInterface $element = null): string
     {
         $view = Craft::$app->getView();
         $view->registerAssetBundle(SpectrumFieldAsset::class);
